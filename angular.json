@@ -23,6 +23,7 @@
               "src/assets"
             ],
             "styles": [
+              "src/custom-theme.scss",
               "src/styles.css"
             ],
             "scripts": []
@@ -67,7 +68,8 @@
               "browserTarget": "ClientContactsFrontend:build:production"
             },
             "development": {
-              "browserTarget": "ClientContactsFrontend:build:development"
+              "browserTarget": "ClientContactsFrontend:build:development",
+              "proxyConfig": "src/proxy.conf.json"
             }
           },
           "defaultConfiguration": "development"
