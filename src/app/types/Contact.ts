@@ -6,3 +6,11 @@ export interface Contact
   email: string
   phoneNumber: string
 }
+
+export interface ContactRequest
+{
+  firstName: string
+  lastName: string
+  email: string
+  phoneNumber: string
+}
