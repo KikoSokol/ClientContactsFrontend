@@ -1,8 +1,8 @@
 <div class="wrapper">
-  <button mat-fab color="primary" aria-label="Example icon button with a delete icon" (click)="openAddContactForm()">
+  <button mat-mini-fab color="primary" class="addButton" aria-label="Example icon button with a delete icon" (click)="openAddContactForm()">
     <mat-icon>add_circle</mat-icon>
   </button>
-  <table *ngIf="contacts" mat-table [dataSource]="contacts" class="mat-elevation-z5">
+  <table *ngIf="contacts" mat-table [dataSource]="contacts" class="table">
 
     <!--- Note that these columns can be defined in any order.
           The actual rendered columns are set as a property on the row definition" -->
@@ -39,17 +39,20 @@
     <ng-container matColumnDef="actions">
       <th mat-header-cell *matHeaderCellDef></th>
       <td mat-cell *matCellDef="let element">
-        <button mat-mini-fab color="primary" aria-label="Example icon button with a menu icon" (click)="openUpdateContactForm(element)">
-          <mat-icon>edit</mat-icon>
-        </button>
-        <button mat-mini-fab color="warn" aria-label="Example icon button with a menu icon" (click)="deleteContact(element)">
-          <mat-icon>delete</mat-icon>
-        </button>
+        <div class="actionButtons">
+          <button mat-mini-fab color="primary" class="updateButton" aria-label="Example icon button with a menu icon" (click)="openUpdateContactForm(element)">
+            <mat-icon>edit</mat-icon>
+          </button>
+          <button mat-mini-fab color="primary" aria-label="Example icon button with a menu icon" (click)="deleteContact(element)">
+            <mat-icon>delete</mat-icon>
+          </button>
+        </div>
+
       </td>
     </ng-container>
 
-    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    <tr  class="header-row" mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr class="row" mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
   </table>
 
 </div>

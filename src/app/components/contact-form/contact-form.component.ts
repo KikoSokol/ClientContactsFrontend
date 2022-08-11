@@ -1,5 +1,5 @@
 import {Component, Inject, OnInit} from '@angular/core';
-import {FormBuilder} from "@angular/forms";
+import {FormBuilder, Validators} from "@angular/forms";
 import {MAT_DIALOG_DATA, MatDialogRef} from "@angular/material/dialog";
 import {ContactTableComponent} from "../contact-table/contact-table.component";
 import {Contact, ContactRequest} from "../../types/Contact";
@@ -12,10 +12,10 @@ import {Contact, ContactRequest} from "../../types/Contact";
 export class ContactFormComponent implements OnInit {
 
   contactForm = this.formBuilder.group({
-    firstName: [''],
-    lastName: [''],
-    email: [''],
-    phoneNumber: ['']
+    firstName: ['', Validators.required],
+    lastName: ['',Validators.required],
+    email: ['', Validators.required],
+    phoneNumber: ['', Validators.required]
   })
 
 

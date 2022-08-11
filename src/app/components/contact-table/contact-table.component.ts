@@ -36,7 +36,8 @@ export class ContactTableComponent implements OnInit {
     });
 
     dialogRef.afterClosed().subscribe(resultContact => {
-      this.addNewContact(resultContact)
+      if(resultContact)
+        this.addNewContact(resultContact)
     })
   }
 
@@ -60,7 +61,8 @@ export class ContactTableComponent implements OnInit {
     });
 
     dialogRef.afterClosed().subscribe(resultContact => {
-      this.updateContact(resultContact)
+      if(resultContact)
+        this.updateContact(resultContact)
     })
   }
 

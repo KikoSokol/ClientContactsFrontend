@@ -1,7 +1,35 @@
-.wrapper{
+.wrapper {
   display: flex;
-  padding: 20px;
+  padding: 0 20rem;
+  flex-direction: column;
+  align-items: center;
+
 }
-table {
+
+.table {
   width: 100%;
+  background: white;
+  box-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
+  overflow: hidden;
+  border-radius: 20px;
 }
+
+.header-row{
+  background: aliceblue;
+  font-weight: 900;
+}
+
+.mat-header-cell{
+ font-weight: 900;
+}
+
+.addButton {
+  transform: translateY(50%);
+}
+
+.actionButtons {
+  display: flex;
+  column-gap: 20px;
+  padding: 10px 0;
+}
+
